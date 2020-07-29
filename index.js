@@ -4,14 +4,14 @@ const express = require('express'),
 const hostname = 'localhost';
 const port = 3000;
 const dishRouter = require('./routes/dishRouter');
-
-
+const leaderRouter = require('./routes/leaderRouter');
+const promotionRouter = require('./routes/promotionRouter');
 const app = express();
 app.use(morgan('dev'));
 app.use('/dishes', dishRouter);
+app.use('/leaders', leaderRouter);
+app.use('/promotions', promotionRouter);
 const bodyParser = require('body-parser');
-
-
 app.use(bodyParser.json());
 
 
